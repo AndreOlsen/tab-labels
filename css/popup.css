@@ -78,6 +78,10 @@ hr {
     padding-inline: 8px;
 }
 
+.hidden {
+    display: none;
+}
+
 button {
     width: 100%;
     display: flex;
