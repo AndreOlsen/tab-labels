@@ -68,6 +68,14 @@ hr {
 .panel__header {
     text-align: center;
     padding: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
 }
 
 .container {
@@ -102,4 +110,10 @@ button svg {
     margin-right: 5px;
     width: 20px;
     height: 100%;
+}
+
+button.go-back {
+    width: fit-content;
+    position: absolute;
+    z-index: 10;
 }
