@@ -1,0 +1,19 @@
+{
+  "name": "tab-labels",
+  "title": "Tab Labels",
+  "description": "Tab labeling allows for organizing tabs based off of web site urls. Custom labels and tab color is used.",
+  "author": "André Winther Olsen",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreOlsen/tab-labels.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "web-ext": "^8.3.0"
+  }
+}

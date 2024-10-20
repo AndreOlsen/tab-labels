@@ -1,55 +1,84 @@
 <!DOCTYPE html>
-<html data-theme="dark">
+<html data-theme="auto">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<title>Tab Labels</title>
 		<link rel="stylesheet" href="css/popup.css" />
 	</head>
 	<body>
-		<div id="labelPanel" class="panel">
+		<section id="overview-panel" class="panel">
 			<header class="panel__header">
-				<h2 class="title">Tab Labels</h2>
+				<h2 class="panel__title">
+					Tab Labels
+				</h2>
 			</header>
 
 			<hr>
 
-			<div class="container">
-				<button class="panel-transition" data-goto="newLabelPanel">
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-						<path fill="currentColor" d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"/>
-					</svg>
-
-					New Label
-				</button>
-			</div>
-
-			<hr>
-
-			<div class="container">
+			<div class="panel__container container">
 				<h3>Labels</h3>
 
 				<div class="labels-list">
 
 				</div>
 			</div>
-		</div>
 
-		<div id="newLabelPanel" class="panel hidden">
-			<header class="panel__header">
-				<button class="go-back">
+			<hr>
+
+			<div class="panel__container container">
+				<button class="panel__button panel-transition" data-goto="new-label-panel">
 					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-						<path fill="currentColor" d="m4 10l-.707.707L2.586 10l.707-.707L4 10Zm17 8a1 1 0 1 1-2 0h2ZM8.293 15.707l-5-5l1.414-1.414l5 5l-1.414 1.414Zm-5-6.414l5-5l1.414 1.414l-5 5l-1.414-1.414ZM4 9h10v2H4V9Zm17 7v2h-2v-2h2Zm-7-7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5V9Z"/>
+						<path 
+							fill="currentColor" 
+							d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"
+						/>
+					</svg>
+
+					Add Label
+				</button>
+			</div>
+		</section>
+
+		<section id="new-label-panel" class="panel hidden">
+			<header class="panel__header">
+				<button class="panel__button go-back">
+					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+						<path 
+							fill="currentColor" 
+							d="m4 10l-.707.707L2.586 10l.707-.707L4 10Zm17 8a1 1 0 1 1-2 0h2ZM8.293 15.707l-5-5l1.414-1.414l5 5l-1.414 1.414Zm-5-6.414l5-5l1.414 1.414l-5 5l-1.414-1.414ZM4 9h10v2H4V9Zm17 7v2h-2v-2h2Zm-7-7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5V9Z"
+						/>
 					</svg>
 				</button>
 
-				<h2 class="title">New Label</h2>
+				<h2 class="panel__title">New Label</h2>
 			</header>
 
 			<hr>
 
+			<div class="panel__container container">
+				<form id="new-label-form">
+					<div class="form-group">
+						<label for="url-pattern">URL Pattern</label>
+						<input type="text" id="url-pattern" name="url-pattern" placeholder="e.g., example.com" required>
+					</div>
 
-		</div>
+					<div class="form-group">
+						<label for="label-text">Label</label>
+						<input type="text" id="label-text" name="label-text" placeholder="e.g., Work" required>
+					</div>
 
+					<div class="form-group">
+						<label for="label-color">Color</label>
+						<input type="color" id="label-color" name="label-color" value="#ff0000">
+					</div>
+
+					<button type="submit" class="panel__button">Save label</button>
+				</form>
+			</div>
+
+		</section>
+
+		<script src="js/utils.js"></script>
 		<script src="js/popup.js"></script>
 	</body>
 </html>

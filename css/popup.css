@@ -5,18 +5,19 @@
     src: url("../fonts/Inter-Regular.woff2") format("woff2");
 }
 
-[data-theme="dark"] {
-    --panel-bg-color: #42414D;
-    --text-color: #f9f9fa;
-    --panel-separator-color: rgba(82, 82, 94, 1);
-    --btn-bg-hover-color: #52525e;
-}
-
-[data-theme="light"] {
+[data-theme="light"],
+:root {
     --panel-bg-color: #FFFFFF;
     --text-color: #000000;
-    --panel-separator-color: rgba(240, 240, 244, 1);
-    --btn-bg-hover-color: #52525e;
+    --panel-separator-color: #F0F0F4;
+    --button-bg-hover-color: #52525E;
+}
+
+[data-theme="dark"] {
+    --panel-bg-color: #42414D;
+    --text-color: #F9F9FA;
+    --panel-separator-color: #52525E;
+    --button-bg-hover-color: #52525E;
 }
 
 * {
@@ -73,28 +74,28 @@ hr {
     align-items: center;
 }
 
-.title {
+.panel__title {
     text-align: center;
     width: 100%;
 }
 
-.container {
-    padding: 8px;
+.panel__container {
+    padding: 10px;
 }
 
-.container *:not(button) {
-    padding-inline: 8px;
+.panel__container > *:not(button) {
+    padding-inline: 10px;
 }
 
 .hidden {
     display: none;
 }
 
-button {
+.panel__button {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 8px;
+    padding: 10px;
     background: none;
     border: none;
     color: var(--text-color);
@@ -102,18 +103,27 @@ button {
     border-radius: 3px;
 }
 
-button:hover {
-    background-color: var(--btn-bg-hover-color);
+.panel__button:hover {
+    background-color: var(--button-bg-hover-color);
 }
 
-button svg {
+.panel__button svg {
     margin-right: 5px;
     width: 20px;
     height: 100%;
 }
 
-button.go-back {
+.panel__button.go-back {
     width: fit-content;
     position: absolute;
     z-index: 10;
+}
+
+label {
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
 }
