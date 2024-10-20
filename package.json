@@ -1,19 +1,35 @@
 {
   "name": "tab-labels",
-  "title": "Tab Labels",
-  "description": "Tab labeling allows for organizing tabs based off of web site urls. Custom labels and tab color is used.",
+  "description": "Allows organizing tabs based on website URLs using custom labels and tab colors.",
   "author": "André Winther Olsen",
+  "license": "MIT",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "keywords": [
+    "browser-extension",
+    "tabs",
+    "labels",
+    "chrome-extension",
+    "firefox-add-on"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndreOlsen/tab-labels.git"
+    "url": "https://github.com/AndreOlsen/tab-labels.git"
   },
+  "bugs": {
+    "url": "https://github.com/AndreOlsen/tab-labels/issues"
+  },
+  "homepage": "https://github.com/AndreOlsen/tab-labels#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "sass --style=compressed scss/popup.scss css/popup.css",
+    "dev:css": "sass scss/popup.scss css/popup.css",
+    "watch:css": "sass --watch scss:css",
+    "lint:ext": "web-ext lint",
+    "run:ext": "web-ext run --start-url about:blank",
+    "build:ext": "web-ext build --overwrite-dest"
   },
-  "license": "ISC",
   "devDependencies": {
+    "sass": "^1.80.3",
     "web-ext": "^8.3.0"
   }
 }
