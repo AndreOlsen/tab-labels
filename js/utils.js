@@ -1,4 +1,4 @@
-export default class Utils {
+class Utils {
     /**
      * Determines the theme to apply.
      * 
@@ -30,6 +30,8 @@ export default class Utils {
         try {
             const { currentTheme } = await browser.storage.local.get("currentTheme");
             const theme = Utils.getTheme(currentTheme);
+
+            console.log(currentTheme, theme);
     
             document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
@@ -37,3 +39,6 @@ export default class Utils {
         }
     }    
 }
+
+// Make available globally
+window.Utils = Utils;
