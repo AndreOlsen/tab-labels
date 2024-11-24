@@ -1,5 +1,4 @@
 @forward "reset";
-@use "sass:color";
 
 @font-face {
     font-family: "Inter";
@@ -14,11 +13,13 @@
     --text-color: #000000;
     --panel-separator-color: #F0F0F4;
     --button-bg-hover-color: #52525E;
+    --input-text-color: #000000;
 }
 
 [data-theme="dark"] {
     --panel-bg-color: #42414D;
     --text-color: #F9F9FA;
+    --input-text-color: #000000;
     --panel-separator-color: #52525E;
     --button-bg-hover-color: #52525E;
 }
@@ -95,7 +96,7 @@ hr {
         gap: 20px;
 
         button {
-            text-align: center;
+            justify-content: center;
         }
     }
 
@@ -133,22 +134,22 @@ form  {
     }
 
     input {
-        color: var(--text-color);
+        color: var(--input-text-color);
 
         &:focus {
-            outline: none;
+            outline: rgba(12, 150, 156, 1) solid 2px;
         }
 
         &[type="text"] {
             width: 100%;
             border-radius: 3px;
             padding: 5px 10px;
-            // background-color: darken(#42414D, 10%); // TODO: Fix this shit.
             border: 1px solid var(--text-color);
         }
 
         &::placeholder {
-            color: var(--text-color);
+            color: var(--input-text-color);
+            opacity: 0.5;
         }
     }
 
@@ -172,7 +173,7 @@ form  {
         cursor: pointer;
 
         &:hover .color-circle {
-            outline: rgba(102, 102, 102, .5) solid 2px;
+            outline: rgba(10, 112, 117, 1) solid 2px;
         }
     }
 
@@ -180,7 +181,7 @@ form  {
         display: none;
 
         &:checked + .color-circle {
-            outline: rgba(0, 0, 0, .5) solid 2px;
+            outline: rgba(12, 150, 156, 1) solid 2px;
         }
     }
 }

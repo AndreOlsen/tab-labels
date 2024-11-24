@@ -25,7 +25,7 @@
     "dev:css": "sass scss/popup.scss css/popup.css",
     "watch:css": "sass --watch scss:css",
     "lint:ext": "web-ext lint",
-    "run:ext": "web-ext run --start-url about:blank",
+    "start:ext": "web-ext run --start-url about:debugging#/runtime/this-firefox --devtools",
     "build:ext": "web-ext build --overwrite-dest"
   },
   "devDependencies": {
